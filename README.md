@@ -68,3 +68,46 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+http://localhost:4000/graphql?query=
+fetch query:
+1.
+{user(id:"40"){
+  firstName,
+  company{
+    name
+  }
+}}
+
+2.
+{company(id:"2"){
+  name,
+  users{
+    firstName
+  }
+}}
+
+
+
+mutation query :
+1.  mutation{
+  addUser(firstName:"jeeva",age:71,companyId:"2")
+  {
+    id
+  }
+}
+2. mutation{
+  deleteUser(id:"6Zdzn9g")
+  {
+    id
+  }
+}
+
+3.
+mutation{partialUpdateUser(id:"40",firstName:"dhanya",age:16){
+  company{
+    name
+  }
+  
+}}
